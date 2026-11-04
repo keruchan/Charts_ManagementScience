@@ -1,0 +1,866 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Management Science | Charts, Graphs & Dashboards</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <nav class="nav">
+        <a class="logo" href="#home"
+          >DATA<span>WISE</span>
+          <small class="brand-context">/ MANAGEMENT SCIENCE</small></a
+        >
+        <div class="navlinks">
+          <a href="#foundations">Foundations</a
+          ><a href="#gallery">Chart Explorer</a
+          ><a href="#chooser">Chart Selector</a
+          ><a href="#dashboard">Dashboard Lab</a
+          ><a href="#build">Excel & Sheets</a><a href="#challenge">Challenge</a>
+        </div>
+        <button
+          id="resetBtn"
+          title="Reset chart, dashboard, and challenge selections"
+        >
+          ↻ Reset
+        </button>
+      </nav>
+    </header>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">
+            Interactive learning experience · Management Science
+          </div>
+          <h1>
+            Don't just collect data.<br /><span class="brand-accent"
+              >Make it speak.</span
+            >
+          </h1>
+          <p>
+            Explore charts, comparisons, trends, relationships, KPI cards,
+            filters, and dashboards. Practice choosing the right visualization
+            for real business decisions—and see how to build it in Excel or
+            Google Sheets.
+          </p>
+          <div class="cta">
+            <a class="btn" href="#gallery">Explore 12 visualizations ↓</a
+            ><a class="btn secondary" href="#dashboard">Try live dashboard</a>
+          </div>
+          <div class="tagrow">
+            <span class="tag">INTERACTIVE GRAPHICS</span
+            ><span class="tag">BUSINESS SCENARIOS</span
+            ><span class="tag">ANSWER REVEALS</span
+            ><span class="tag">MINI-GAME</span>
+          </div>
+        </div>
+        <div
+          class="hero-illustration"
+          aria-label="Illustration of a business analytics dashboard"
+        >
+          <div class="bar"></div>
+          <div class="bar illustration-subtitle"></div>
+          <svg
+            viewBox="0 0 460 270"
+            role="img"
+            aria-label="Dashboard overview charts"
+          >
+            <rect x="3" y="13" width="144" height="60" rx="10" fill="#eef2ff" />
+            <rect
+              x="158"
+              y="13"
+              width="144"
+              height="60"
+              rx="10"
+              fill="#e8f7f2"
+            />
+            <rect
+              x="313"
+              y="13"
+              width="144"
+              height="60"
+              rx="10"
+              fill="#fff2e7"
+            />
+            <text x="18" y="35" fill="#687cae" font-size="12">
+              Total revenue
+            </text>
+            <text x="18" y="59" fill="#2a4292" font-size="23" font-weight="800">
+              ₱1.42M
+            </text>
+            <text x="173" y="35" fill="#529985" font-size="12">
+              Transactions
+            </text>
+            <text
+              x="173"
+              y="59"
+              fill="#136e5c"
+              font-size="23"
+              font-weight="800"
+            >
+              3,250
+            </text>
+            <text x="328" y="35" fill="#b08b66" font-size="12">Growth</text>
+            <text
+              x="328"
+              y="59"
+              fill="#aa681f"
+              font-size="23"
+              font-weight="800"
+            >
+              +18.4%
+            </text>
+            <rect
+              x="3"
+              y="87"
+              width="274"
+              height="175"
+              rx="11"
+              fill="#f7f9fe"
+              stroke="#e2e8f5"
+            />
+            <rect
+              x="289"
+              y="87"
+              width="168"
+              height="175"
+              rx="11"
+              fill="#f7f9fe"
+              stroke="#e2e8f5"
+            />
+            <text
+              x="16"
+              y="108"
+              font-size="12"
+              fill="#566685"
+              font-weight="700"
+            >
+              Monthly performance
+            </text>
+            <path
+              d="M27 236H260M27 202H260M27 169H260M27 136H260"
+              stroke="#e1e8f4"
+            />
+            <polyline
+              points="31,210 70,192 108,200 148,162 188,175 228,127 257,121"
+              fill="none"
+              stroke="#4567d6"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <g fill="#4567d6">
+              <circle cx="31" cy="210" r="4" />
+              <circle cx="148" cy="162" r="4" />
+              <circle cx="257" cy="121" r="4" />
+            </g>
+            <text
+              x="302"
+              y="108"
+              font-size="12"
+              fill="#566685"
+              font-weight="700"
+            >
+              Product mix
+            </text>
+            <circle
+              cx="373"
+              cy="181"
+              r="55"
+              fill="none"
+              stroke="#e6ebf6"
+              stroke-width="19"
+            />
+            <circle
+              cx="373"
+              cy="181"
+              r="55"
+              fill="none"
+              stroke="#4567d6"
+              stroke-width="19"
+              stroke-dasharray="160 346"
+              transform="rotate(-90 373 181)"
+            />
+            <circle
+              cx="373"
+              cy="181"
+              r="55"
+              fill="none"
+              stroke="#20a28a"
+              stroke-width="19"
+              stroke-dasharray="100 346"
+              stroke-dashoffset="-160"
+              transform="rotate(-90 373 181)"
+            />
+            <text
+              x="373"
+              y="188"
+              text-anchor="middle"
+              fill="#40516e"
+              font-size="16"
+              font-weight="800"
+            >
+              100%
+            </text>
+          </svg>
+          <div class="tip align-end">
+            A good dashboard answers questions in seconds.
+          </div>
+        </div>
+      </div>
+    </section>
+    <main>
+      <noscript
+        ><p class="container callout">
+          Enable JavaScript to explore the interactive charts, data scenarios,
+          dashboard, and quiz.
+        </p></noscript
+      >
+      <section class="section container" id="foundations">
+        <div class="section-num">01 / Foundations</div>
+        <h2>What are charts, graphs, and dashboards?</h2>
+        <p class="section-intro">
+          In Management Science, data visualization turns numbers into evidence
+          that supports planning, resource allocation, forecasting, monitoring,
+          and decision-making.
+        </p>
+        <div class="grid g3 space-top-lg">
+          <article class="card">
+            <div class="icon">▥</div>
+            <h3>Chart</h3>
+            <p>
+              A visual representation of data, using bars, lines, slices, dots,
+              or other marks to communicate a comparison, distribution,
+              relationship, or pattern.
+            </p>
+          </article>
+          <article class="card">
+            <div class="icon">⌁</div>
+            <h3>Graph</h3>
+            <p>
+              Often used interchangeably with <em>chart</em>; more specifically,
+              a display of values or relationships on axes, such as a line graph
+              or scatter plot.
+            </p>
+          </article>
+          <article class="card">
+            <div class="icon">▦</div>
+            <h3>Dashboard</h3>
+            <p>
+              A coordinated, at-a-glance view of important metrics and
+              visualizations. It may be interactive, with filters that update
+              multiple components together.
+            </p>
+          </article>
+        </div>
+        <div class="grid g2 discussion">
+          <article class="card">
+            <h3>From description to decision</h3>
+            <p>
+              A chart describes what happened. A comparison establishes whether
+              that result is unusual or meaningful. A decision also needs
+              constraints: capacity, budget, service standards, risk, and the
+              cost of acting. High revenue can coexist with losses; a busy
+              branch can have more complaints but a lower complaint rate.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Variation, uncertainty, and missing data</h3>
+            <p>
+              A short rise is not a reliable forecast. Seasonality, unusual
+              events, sample size, and changes in measurement can alter a
+              pattern. Zero means an observed absence; missing means unknown. A
+              percentage without its base count can hide a small sample, and
+              correlation alone cannot establish cause.
+            </p>
+          </article>
+        </div>
+        <h3 class="space-top-xl">
+          Why visualize data instead of showing only tables?
+        </h3>
+        <div class="grid g3">
+          <div class="card">
+            <h3>01 · See patterns</h3>
+            <p>
+              Identify trends, seasonality, growth, decline, outliers, and
+              unusual changes quickly.
+            </p>
+          </div>
+          <div class="card">
+            <h3>02 · Compare clearly</h3>
+            <p>
+              Spot the highest-selling item, lowest-performing branch, or
+              category needing attention.
+            </p>
+          </div>
+          <div class="card">
+            <h3>03 · Decide faster</h3>
+            <p>
+              Prioritize actions using evidence—not just instinct—and
+              communicate findings to stakeholders.
+            </p>
+          </div>
+          <div class="card">
+            <h3>04 · Monitor targets</h3>
+            <p>
+              Track performance against quotas, service-level goals, budgets, or
+              forecasts.
+            </p>
+          </div>
+          <div class="card">
+            <h3>05 · Find relationships</h3>
+            <p>
+              Investigate how two variables move together and identify questions
+              for further analysis.
+            </p>
+          </div>
+          <div class="card">
+            <h3>06 · Tell a story</h3>
+            <p>
+              Combine evidence, context, and a recommended action into one
+              understandable message.
+            </p>
+          </div>
+        </div>
+        <div class="callout">
+          <strong>Core idea:</strong> There is no universally “best” chart. The
+          best chart depends on the <strong>question</strong>, the
+          <strong>data type</strong>, and the <strong>decision</strong> being
+          made. A good chart reduces confusion; a misleading one can create bad
+          decisions.
+        </div>
+      </section>
+      <section class="section container" id="gallery">
+        <div class="section-num">02 / Interactive chart explorer</div>
+        <h2>12 ways to make data meaningful</h2>
+        <p class="section-intro">
+          Select a visualization and an outcome scenario. Compare contrasting
+          patterns, inspect the underlying values, and reveal an interpretation
+          calculated from the current data. Synthetic examples illustrate
+          representative outcomes; they do not exhaust every real-world
+          possibility.
+        </p>
+        <div class="charts-layout space-top-gallery">
+          <div class="chart-menu" id="chartMenu" aria-label="Chart types"></div>
+          <article class="card chart-detail">
+            <div class="titleline">
+              <h3 id="chartTitle" class="chart-heading"></h3>
+              <span class="purpose" id="chartPurpose"></span>
+            </div>
+            <p id="chartDefinition"></p>
+            <div class="controlrow">
+              <label for="chartDataset">Outcome scenario:</label
+              ><select id="chartDataset"></select
+              ><button class="smallbtn" id="chartShuffle">
+                ↻ Generate another dataset
+              </button>
+            </div>
+            <div class="chart-graphic">
+              <svg
+                id="chartSvg"
+                viewBox="0 0 720 265"
+                role="img"
+                aria-label="Interactive chart"
+              ></svg>
+              <div class="legend" id="chartLegend"></div>
+            </div>
+            <p id="datasetNote" class="tip" aria-live="polite"></p>
+            <details class="data-details">
+              <summary>View current data</summary>
+              <div id="chartData" class="comparison"></div>
+            </details>
+            <div class="chart-meta">
+              <div>
+                <h4>When to use it</h4>
+                <p id="chartUse"></p>
+              </div>
+              <div>
+                <h4>Key advantage / caution</h4>
+                <p id="chartCaution"></p>
+              </div>
+            </div>
+            <div class="sample">
+              <strong>🧠 Management scenario</strong>
+              <p id="chartScenario"></p>
+              <strong>Question:</strong> <span id="chartQuestion"></span>
+              <div class="answer-action">
+                <button id="revealBtn" class="smallbtn">Reveal answer</button>
+              </div>
+              <div class="answer" id="chartAnswer" aria-live="polite"></div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="section container" id="chooser">
+        <div class="section-num">03 / Choosing wisely</div>
+        <h2>Start with the question, not the chart style</h2>
+        <div class="comparison space-top-md">
+          <table>
+            <thead>
+              <tr>
+                <th>Your business question</th>
+                <th>Recommended chart</th>
+                <th>Reason</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Are sales improving every month?</td>
+                <td>Line / area</td>
+                <td>Shows a trend over ordered time.</td>
+              </tr>
+              <tr>
+                <td>Which product sold the most?</td>
+                <td>Column / horizontal bar</td>
+                <td>Compares distinct categories.</td>
+              </tr>
+              <tr>
+                <td>What fraction belongs to each department?</td>
+                <td>Pie / doughnut</td>
+                <td>Shows parts of one whole when categories are few.</td>
+              </tr>
+              <tr>
+                <td>Do marketing expenses relate to sales?</td>
+                <td>Scatter plot</td>
+                <td>
+                  Displays a relationship between two numerical variables.
+                </td>
+              </tr>
+              <tr>
+                <td>Where do applicants drop off?</td>
+                <td>Funnel</td>
+                <td>Shows stage-by-stage retention in a process.</td>
+              </tr>
+              <tr>
+                <td>Which team has the strongest skill profile?</td>
+                <td>Radar</td>
+                <td>Compares several indicators on a common scale.</td>
+              </tr>
+              <tr>
+                <td>What day and hour is busiest?</td>
+                <td>Heatmap</td>
+                <td>Finds intensity patterns in a grid.</td>
+              </tr>
+              <tr>
+                <td>How are exam scores distributed?</td>
+                <td>Histogram</td>
+                <td>Groups numerical values into intervals.</td>
+              </tr>
+              <tr>
+                <td>How does monthly revenue volume change?</td>
+                <td>Area</td>
+                <td>
+                  Emphasizes magnitude beneath a time series. Cumulative revenue
+                  requires calculating running totals first.
+                </td>
+              </tr>
+              <tr>
+                <td>How much did actual results miss the target?</td>
+                <td>Bullet / KPI with target</td>
+                <td>Emphasizes progress toward one objective.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout">
+          <strong>Common traps:</strong> Avoid 3D pie charts; compare categories
+          on a consistent baseline; do not truncate the bar-chart axis to
+          exaggerate differences; label units; sort bars where useful; and
+          remember that correlation does not establish causation.
+        </div>
+      </section>
+      <section class="section container" id="dashboard">
+        <div class="section-num">04 / Dashboard lab</div>
+        <h2>One dataset. Many decisions.</h2>
+        <p class="section-intro">
+          Compare growth, decline, seasonal demand, stable trading, operating
+          losses, sparse activity, and no transactions. All cards and charts use
+          the same filtered orders. Revenue measures sales volume; gross margin
+          measures the share remaining after recorded cost, before other
+          operating expenses.
+        </p>
+        <div class="dash space-top-dashboard">
+          <div class="dash-head">
+            <div>
+              <h3>
+                Retail Performance Dashboard
+                <span class="simulation-label">· simulated dataset</span>
+              </h3>
+              <span class="tip"
+                >Management snapshot · Sales and gross profitability</span
+              >
+            </div>
+            <button class="smallbtn" id="filtersReset">Clear filters</button>
+          </div>
+          <div class="filterbar">
+            <label
+              >Business scenario<select id="dashboardScenario">
+                <option value="growth">Growth</option>
+                <option value="decline">Decline</option>
+                <option value="seasonal">Seasonality</option>
+                <option value="flat">Stable performance</option>
+                <option value="loss">Loss-making sales</option>
+                <option value="sparse">Sparse activity</option>
+                <option value="empty">No transactions</option>
+              </select></label
+            ><label
+              >Branch<select id="filterBranch">
+                <option value="All">All branches</option>
+              </select></label
+            ><label
+              >Product group<select id="filterProduct">
+                <option value="All">All products</option>
+              </select></label
+            ><label
+              >Quarter<select id="filterQuarter">
+                <option value="All">Full year</option>
+                <option value="Q1">Q1 · Jan–Mar</option>
+                <option value="Q2">Q2 · Apr–Jun</option>
+                <option value="Q3">Q3 · Jul–Sep</option>
+                <option value="Q4">Q4 · Oct–Dec</option>
+              </select></label
+            ><label
+              >Sales channel<select id="filterChannel">
+                <option value="All">All channels</option>
+              </select></label
+            >
+          </div>
+          <div class="kpis">
+            <div class="kpi">
+              <div class="name">Total Revenue</div>
+              <div class="value" id="kpiRevenue">—</div>
+              <div class="sub">Sum of filtered sales (₱)</div>
+            </div>
+            <div class="kpi">
+              <div class="name">Orders</div>
+              <div class="value" id="kpiOrders">—</div>
+              <div class="sub">Number of transactions</div>
+            </div>
+            <div class="kpi">
+              <div class="name">Average Order Value</div>
+              <div class="value" id="kpiAov">—</div>
+              <div class="sub">Revenue ÷ orders</div>
+            </div>
+            <div class="kpi">
+              <div class="name">Gross Margin</div>
+              <div class="value" id="kpiMargin">—</div>
+              <div class="sub">(Revenue − cost) ÷ revenue</div>
+            </div>
+          </div>
+          <div class="dash-panels">
+            <div class="panel">
+              <h4>Monthly revenue trend</h4>
+              <div class="mini">Question: Are we progressing over time?</div>
+              <svg
+                id="dashLine"
+                viewBox="0 0 620 230"
+                role="img"
+                aria-label="Monthly revenue line chart"
+              ></svg>
+            </div>
+            <div class="panel">
+              <h4>Revenue by product group</h4>
+              <div class="mini">Question: What generates the most revenue?</div>
+              <svg
+                id="dashBars"
+                viewBox="0 0 400 230"
+                role="img"
+                aria-label="Revenue by product group bar chart"
+              ></svg>
+            </div>
+          </div>
+          <p class="dash-note" id="dashboardInsight" aria-live="polite"></p>
+          <p class="dash-note" id="filterSummary" aria-live="polite"></p>
+        </div>
+        <div class="grid g2 space-top-md">
+          <div class="card">
+            <h3>What is a KPI card?</h3>
+            <p>
+              <strong>KPI</strong> means <em>Key Performance Indicator</em>: a
+              metric chosen to evaluate success against a goal. A count card
+              highlights a single important number (such as total orders, active
+              students, or absent employees), typically alongside a date range,
+              comparison, or target.
+            </p>
+            <p>
+              <strong>Not every count is a useful KPI.</strong> Choose metrics
+              that matter to the objective.
+            </p>
+          </div>
+          <div class="card">
+            <h3>What is a filter or slicer?</h3>
+            <p>
+              A <strong>filter</strong> limits data to a subset, such as one
+              branch, product, month, or status. A <strong>slicer</strong> is a
+              clickable filtering control in Excel (and other analytics tools).
+              A well-designed dashboard keeps connected cards and charts
+              synchronized when a filter changes.
+            </p>
+            <p>
+              <strong>Important:</strong> Always indicate which filters and date
+              ranges are active.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section container" id="build">
+        <div class="section-num">05 / From spreadsheet to dashboard</div>
+        <h2>Building effective dashboards in Excel or Google Sheets</h2>
+        <div class="grid g2 space-top-lg">
+          <article class="card">
+            <h3>Practical workflow</h3>
+            <div class="step">
+              <div class="stepno">1</div>
+              <div>
+                <h4>Define a business question</h4>
+                <p>
+                  Example: “Which branch needs attention this quarter?” Choose
+                  3–6 metrics that answer it.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="stepno">2</div>
+              <div>
+                <h4>Prepare a clean source table</h4>
+                <p>
+                  Use columns such as Date, Branch, Product, Channel, Orders,
+                  Revenue, and Cost. One row should represent one consistent
+                  observation or transaction. Avoid merged cells and
+                  inconsistent labels.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="stepno">3</div>
+              <div>
+                <h4>Create calculations</h4>
+                <p>
+                  Examples: Total Revenue = SUM(Revenue); Average Order Value =
+                  Total Revenue / Orders; Gross Margin = (Revenue − Cost) /
+                  Revenue. Handle zero denominators.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="stepno">4</div>
+              <div>
+                <h4>Summarize with pivot tables</h4>
+                <p>
+                  Aggregate by month, branch, or product. Use SUM, COUNT, and
+                  AVERAGE appropriately; avoid averaging percentages when a
+                  weighted calculation is needed.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="stepno">5</div>
+              <div>
+                <h4>Select the appropriate charts</h4>
+                <p>
+                  Time → line; categories → bars; contribution → pie;
+                  relationship → scatter; process stages → funnel.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="stepno">6</div>
+              <div>
+                <h4>Assemble and test</h4>
+                <p>
+                  Place KPI cards first, then high-priority charts. Add slicers
+                  or filter cells. Test all combinations and verify totals
+                  against the source data.
+                </p>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Excel and Google Sheets: practical starting points</h3>
+            <p><strong>Microsoft Excel</strong></p>
+            <ol>
+              <li>
+                Convert data to a Table: select range → <strong>Ctrl+T</strong>.
+              </li>
+              <li>Select the table → <strong>Insert → PivotTable</strong>.</li>
+              <li>Drag Date/Branch/Product into Rows; Revenue into Values.</li>
+              <li>
+                Choose <strong>Insert → PivotChart</strong> or insert a standard
+                chart from the summary.
+              </li>
+              <li>
+                With a PivotTable selected, use
+                <strong>PivotTable Analyze → Insert Slicer</strong> and/or
+                <strong>Insert Timeline</strong> (supported versions).
+              </li>
+              <li>
+                Use <strong>Report Connections</strong> for compatible
+                PivotTables to control multiple summaries with one slicer.
+              </li>
+            </ol>
+            <p><strong>Google Sheets</strong></p>
+            <ol>
+              <li>
+                Use one structured source sheet and a separate
+                <strong>Dashboard</strong> tab.
+              </li>
+              <li>
+                Choose <strong>Insert → Pivot table</strong>, then summarize by
+                relevant dimensions.
+              </li>
+              <li>
+                Choose <strong>Insert → Chart</strong>; use the Chart editor to
+                select chart type and range.
+              </li>
+              <li>
+                Add a <strong>Data → Add a slicer</strong> on compatible data or
+                pivot tables. Alternatively use dropdown cells with QUERY,
+                FILTER, or SUMIFS for a custom dashboard.
+              </li>
+              <li>
+                Check what each slicer actually controls—charts based on
+                unrelated ranges may not respond automatically.
+              </li>
+            </ol>
+            <p class="tip">
+              Menu labels can vary by version and platform. A single filter
+              affects multiple outputs only when their sources or formulas are
+              explicitly connected.
+            </p>
+          </article>
+        </div>
+        <div class="grid g2 space-top-md">
+          <article class="card">
+            <h3>Helpful spreadsheet formulas</h3>
+            <table class="mini-table">
+              <tr>
+                <th>Purpose</th>
+                <th>Illustrative formula</th>
+              </tr>
+              <tr>
+                <td>Total revenue</td>
+                <td><code>=SUM(F2:F1001)</code></td>
+              </tr>
+              <tr>
+                <td>Number of orders</td>
+                <td><code>=COUNTA(A2:A1001)</code></td>
+              </tr>
+              <tr>
+                <td>Revenue for “North”</td>
+                <td><code>=SUMIF(B2:B1001,"North",F2:F1001)</code></td>
+              </tr>
+              <tr>
+                <td>Revenue by branch + product</td>
+                <td>
+                  <code
+                    >=SUMIFS(F2:F1001,B2:B1001,"North",C2:C1001,"Coffee")</code
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>AOV (one row = one order)</td>
+                <td><code>=IFERROR(SUM(F2:F1001)/COUNTA(A2:A1001),0)</code></td>
+              </tr>
+              <tr>
+                <td>Margin % (Cost is G)</td>
+                <td>
+                  <code
+                    >=IFERROR((SUM(F2:F1001)-SUM(G2:G1001))/SUM(F2:F1001),0)</code
+                  >
+                </td>
+              </tr>
+            </table>
+            <p class="tip">
+              Assumes A=Order ID, B=Branch, C=Product, F=Revenue, G=Cost; adjust
+              to your sheet. If each row represents multiple orders, sum the
+              order counts instead of counting rows.
+            </p>
+          </article>
+          <article class="card">
+            <h3>A useful dashboard layout</h3>
+            <div class="layout-preview">
+              <div class="layout-preview-title">
+                Dashboard title · Period · Last updated
+              </div>
+              <div class="layout-preview-filters">
+                Filters: Date | Branch | Product | Channel
+              </div>
+              <div class="layout-preview-kpis">
+                <div class="layout-preview-kpi">Revenue</div>
+                <div class="layout-preview-kpi">Orders</div>
+                <div class="layout-preview-kpi">AOV</div>
+                <div class="layout-preview-kpi">Margin</div>
+              </div>
+              <div class="layout-preview-panels">
+                <div class="layout-preview-panel">Trend chart</div>
+                <div class="layout-preview-panel">Category chart</div>
+              </div>
+              <div class="layout-preview-insight">
+                Key insight + recommended action
+              </div>
+            </div>
+            <p>
+              <strong>Design rule:</strong> Put filters before the KPIs they
+              control, keep related information together, use consistent number
+              formats and restrained colors, and leave enough whitespace.
+            </p>
+          </article>
+        </div>
+        <div class="callout">
+          <strong>Dashboard quality checklist:</strong> Clear audience and
+          purpose · accurate source data · meaningful metrics · descriptive
+          titles · axes and units · accessible color contrast · synchronized
+          filters · correct totals · comparisons or targets · actionable
+          takeaway.
+        </div>
+      </section>
+      <section class="section container" id="challenge">
+        <div class="section-num">06 / Decision lab</div>
+        <h2>Chart Detective: what would you choose?</h2>
+        <p class="section-intro">
+          Test your chart judgment. Select one answer per question to reveal the
+          reasoning and build your score.
+        </p>
+        <div class="challenge-toolbar">
+          <span id="score" class="score">Score: 0 / 6 answered</span
+          ><button id="quizReset" class="smallbtn">Try again ↻</button>
+        </div>
+        <div id="quizArea"></div>
+        <div class="card bonus-card">
+          <h3>🎭 Bonus twist: The misleading dashboard</h3>
+          <p>
+            A manager shows January revenue of ₱98,000 and February revenue of
+            ₱100,000 using bars whose vertical axis starts at ₱97,000. February
+            appears dramatically taller. Is that a fair comparison?
+          </p>
+          <button class="smallbtn" id="twistBtn">Expose the trick</button>
+          <div class="answer" id="twistAnswer">
+            <strong>Not fair if the chart implies a huge growth jump.</strong>
+            Revenue increased by only about <strong>2.04%</strong>, but a
+            cropped bar axis exaggerates the visual difference. Standard
+            bar/column charts should normally start at zero. A line chart can
+            use a tighter scale if the axis is clearly labeled and the goal is
+            to inspect small changes.
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <strong>DATAWISE · Management Science</strong>
+        <div>
+          Interactive charts, scenarios, and dashboard simulations. All sample
+          numbers are synthetic and for learning only.
+        </div>
+      </div>
+    </footer>
+    <script defer src="js/charts.js"></script>
+    <script defer src="js/chart-content.js"></script>
+    <script defer src="js/scenarios.js"></script>
+    <script defer src="js/explorer.js"></script>
+    <script defer src="js/dashboard.js"></script>
+    <script defer src="js/quiz.js"></script>
+  </body>
+</html>
