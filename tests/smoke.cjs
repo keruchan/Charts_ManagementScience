@@ -150,8 +150,108 @@ const { pathToFileURL } = require('node:url');
       );
       return { outcomes, generated, filterSelections };
     });
+    // Exercise the carousel through its public controls, including focus handling.
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    assert.equal(await page.locator('.concept-slide').count(), 13);
+    assert.equal(await page.locator('.concept-more').count(), 12);
+    assert.equal(
+      await page.locator('.concept-source-table tbody tr').count(),
+      6,
+    );
+    await page.locator('#conceptNext').click();
+    assert.equal(await page.locator('#conceptCount').innerText(), '02 / 13');
+    await page.locator('.concept-slide').nth(1).locator('summary').click();
+    assert(
+      await page
+        .locator('.concept-slide')
+        .nth(1)
+        .locator('details')
+        .evaluate((el) => el.open),
+    );
+    await page.keyboard.press('ArrowRight');
+    assert.equal(await page.locator('#conceptCount').innerText(), '03 / 13');
+    assert(
+      await page
+        .locator('.concept-carousel')
+        .evaluate((el) => el === document.activeElement),
+    );
+    await page.keyboard.press('End');
+    assert.equal(await page.locator('#conceptCount').innerText(), '13 / 13');
+    await page.locator('#conceptNext').click();
+    assert.equal(await page.locator('#conceptCount').innerText(), '01 / 13');
+    await page.locator('#conceptPrevious').click();
+    assert.equal(await page.locator('#conceptCount').innerText(), '13 / 13');
+    await page.locator('.concept-dot').nth(3).click();
+    assert.equal(await page.locator('#conceptCount').innerText(), '04 / 13');
+    await page.locator('.concept-carousel').focus();
+    await page.keyboard.press('Home');
+    assert.equal(await page.locator('#conceptCount').innerText(), '01 / 13');
+    await page.locator('.concept-window').evaluate((el) => {
+      el.dispatchEvent(
+        new TouchEvent('touchstart', {
+          touches: [
+            new Touch({
+              identifier: 1,
+              target: el,
+              clientX: 250,
+              clientY: 100,
+            }),
+          ],
+        }),
+      );
+      el.dispatchEvent(
+        new TouchEvent('touchend', {
+          changedTouches: [
+            new Touch({
+              identifier: 1,
+              target: el,
+              clientX: 100,
+              clientY: 105,
+            }),
+          ],
+        }),
+      );
+    });
+    assert.equal(await page.locator('#conceptCount').innerText(), '02 / 13');
+    await page.locator('#resetBtn').click();
+    assert.equal(await page.locator('#conceptCount').innerText(), '01 / 13');
     for (const width of [390, 768, 1440]) {
       await page.setViewportSize({ width, height: 1000 });
+      for (let i = 0; i < 13; i++) {
+        await page.locator('.concept-dot').nth(i).click();
+        await page.waitForFunction(
+          () =>
+            Math.abs(
+              document.querySelector('.concept-window').getBoundingClientRect()
+                .height -
+                document
+                  .querySelectorAll('.concept-slide')
+                  [conceptIndex].getBoundingClientRect().height,
+            ) < 2,
+        );
+        const state = await page.evaluate(() => {
+          const active =
+            document.querySelectorAll('.concept-slide')[conceptIndex];
+          const viewport = document
+            .querySelector('.concept-window')
+            .getBoundingClientRect();
+          const rect = active.getBoundingClientRect();
+          return {
+            inert: [...document.querySelectorAll('.concept-slide')].filter(
+              (s) => !s.inert,
+            ).length,
+            aligned: Math.abs(rect.left - viewport.left) < 2,
+            contained: active.scrollWidth <= active.clientWidth + 1,
+          };
+        });
+        assert.equal(
+          state.inert,
+          1,
+          'Only the active slide should be interactive',
+        );
+        assert(state.aligned, `Slide ${i + 1} misaligned at ${width}px`);
+        assert(state.contained, `Slide ${i + 1} overflows at ${width}px`);
+      }
       assert(
         await page.evaluate(
           () => document.documentElement.scrollWidth <= innerWidth,
@@ -170,7 +270,7 @@ const { pathToFileURL } = require('node:url');
     );
     await page.waitForURL('**/index.html');
     console.log(
-      `Passed: ${results.outcomes} curated outcomes, ${results.generated} generated datasets, ${results.filterSelections} dashboard filter selections, quiz/reset, 3 viewport widths, legacy entry point. No browser runtime errors.`,
+      `Passed: ${results.outcomes} curated outcomes, ${results.generated} generated datasets, ${results.filterSelections} dashboard filter selections, quiz/reset, 13 carousel slides across 3 viewport widths, carousel controls/keyboard/swipe, legacy entry point. No browser runtime errors.`,
     );
   } finally {
     await browser.close();

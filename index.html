@@ -332,6 +332,101 @@
           decisions.
         </div>
       </section>
+      <section
+        class="section concept-section"
+        id="visualization-concepts"
+        aria-labelledby="conceptHeading"
+      >
+        <div class="concept-heading-row">
+          <div>
+            <div class="section-num">
+              Further discussion / Data visualization
+            </div>
+            <h2 id="conceptHeading">
+              How a visualization turns data into meaning
+            </h2>
+            <p class="section-intro">
+              One idea at a time. Explore the visual, see the difference, and
+              move left or right.
+            </p>
+          </div>
+          <div class="concept-navigation" aria-label="Slide controls">
+            <button
+              class="concept-arrow"
+              id="conceptPrevious"
+              aria-label="Previous discussion"
+              aria-controls="conceptTrack"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M19 12H5m6-6-6 6 6 6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <span
+              id="conceptCount"
+              class="concept-count"
+              aria-live="polite"
+              aria-atomic="true"
+              >01 / 13</span
+            >
+            <button
+              class="concept-arrow"
+              id="conceptNext"
+              aria-label="Next discussion"
+              aria-controls="conceptTrack"
+            >
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M5 12h14m-6-6 6 6-6 6"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          class="concept-carousel"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Data visualization discussions"
+          tabindex="0"
+        >
+          <div class="concept-window">
+            <div class="concept-track" id="conceptTrack"></div>
+          </div>
+        </div>
+        <div class="concept-bottom-row">
+          <div
+            class="concept-dots"
+            id="conceptDots"
+            role="group"
+            aria-label="Choose a discussion"
+          ></div>
+          <span class="concept-hint"
+            >Use the arrows, swipe, or press &larr; &rarr;</span
+          >
+        </div>
+      </section>
       <section class="section container" id="gallery">
         <div class="section-num">02 / Interactive chart explorer</div>
         <h2>12 ways to make data meaningful</h2>
@@ -862,5 +957,7 @@
     <script defer src="js/explorer.js"></script>
     <script defer src="js/dashboard.js"></script>
     <script defer src="js/quiz.js"></script>
+    <script defer src="js/concept-content.js"></script>
+    <script defer src="js/concept-carousel.js"></script>
   </body>
 </html>

@@ -4,18 +4,22 @@ Open `index.html` directly in a browser. No server, build step, runtime librarie
 
 ## Editing
 
-| File                  | Purpose                                                                           |
-| --------------------- | --------------------------------------------------------------------------------- |
-| `index.html`          | Page sections, navigation, dashboard controls, spreadsheet discussion             |
-| `css/styles.css`      | Theme, components, responsive layouts, accessibility preferences                  |
-| `js/charts.js`        | SVG drawing and shared number formatting                                          |
-| `js/chart-content.js` | Chart definitions, uses, cautions, labels, comparison profiles                    |
-| `js/scenarios.js`     | Named outcome datasets, constrained random generation, calculated interpretations |
-| `js/explorer.js`      | Chart selection, scenario controls, answer reveals, current data table            |
-| `js/dashboard.js`     | Synthetic orders, dashboard scenarios, filters, KPI calculations                  |
-| `js/quiz.js`          | Questions, scoring, bonus reveal, global reset                                    |
+| File                     | Purpose                                                                           |
+| ------------------------ | --------------------------------------------------------------------------------- |
+| `index.html`             | Page sections, navigation, dashboard controls, spreadsheet discussion             |
+| `css/styles.css`         | Theme, components, responsive layouts, accessibility preferences                  |
+| `js/charts.js`           | SVG drawing and shared number formatting                                          |
+| `js/chart-content.js`    | Chart definitions, uses, cautions, labels, comparison profiles                    |
+| `js/scenarios.js`        | Named outcome datasets, constrained random generation, calculated interpretations |
+| `js/explorer.js`         | Chart selection, scenario controls, answer reveals, current data table            |
+| `js/dashboard.js`        | Synthetic orders, dashboard scenarios, filters, KPI calculations                  |
+| `js/quiz.js`             | Questions, scoring, bonus reveal, global reset                                    |
+| `js/concept-content.js`  | Original extended discussions, preserved in each slide’s “Read more”              |
+| `js/concept-carousel.js` | Concise slide content, HTML/SVG visuals, navigation, keyboard and swipe controls  |
 
 Scripts load in this order using `defer`. Plain scripts support opening the page through `file://`. Keep shared names unique across files. Styling belongs in the stylesheet; existing decorative inline styles have also been moved there.
+
+The full-width discussion carousel starts with a table-versus-graph comparison and includes all twelve discussion topics. Slides move with the arrow buttons, topic dots, left/right keys, Home/End, or horizontal swipes. There is no automatic advance. Motion follows the browser’s reduced-motion preference, and offscreen slides are hidden from keyboard and screen-reader navigation. Extended text remains in expandable “Read more” sections.
 
 ## Sample data
 
