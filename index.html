@@ -926,9 +926,59 @@
         <div class="card bonus-card">
           <h3>🎭 Bonus twist: The misleading dashboard</h3>
           <p>
-            A manager shows January revenue of ₱98,000 and February revenue of
-            ₱100,000 using bars whose vertical axis starts at ₱97,000. February
-            appears dramatically taller. Is that a fair comparison?
+            A manager presents this chart of January and February revenue. Study
+            the bars and the axis labels before revealing the answer.
+          </p>
+          <figure class="twist-chart" id="twistExample">
+            <figcaption>Monthly revenue</figcaption>
+            <svg
+              viewBox="0 0 600 320"
+              role="img"
+              aria-labelledby="twistExampleTitle twistExampleDesc"
+            >
+              <title id="twistExampleTitle">January and February revenue</title>
+              <desc id="twistExampleDesc">
+                January revenue is 98,000 pesos and February revenue is 100,000
+                pesos. The vertical axis runs from 97,000 to 100,000 pesos.
+              </desc>
+              <text x="90" y="25" class="twist-axis-label">Revenue (₱)</text>
+              <g class="twist-grid">
+                <path d="M90 60H560 M90 120H560 M90 180H560" />
+              </g>
+              <path class="twist-axis" d="M90 50V240H560" />
+              <g class="twist-ticks" text-anchor="end">
+                <text x="78" y="65">100,000</text>
+                <text x="78" y="125">99,000</text>
+                <text x="78" y="185">98,000</text>
+                <text x="78" y="245">97,000</text>
+              </g>
+              <g class="twist-bars">
+                <rect x="170" y="180" width="100" height="60" rx="3" />
+                <rect x="380" y="60" width="100" height="180" rx="3" />
+              </g>
+              <g class="twist-values" text-anchor="middle">
+                <text x="220" y="168">₱98,000</text>
+                <text x="430" y="48">₱100,000</text>
+              </g>
+              <g class="twist-ticks" text-anchor="middle">
+                <text x="220" y="270">January</text>
+                <text x="430" y="270">February</text>
+              </g>
+              <text
+                x="325"
+                y="305"
+                text-anchor="middle"
+                class="twist-axis-label"
+              >
+                Month · Synthetic example
+              </text>
+            </svg>
+          </figure>
+          <p id="twistQuestion">
+            <strong
+              >Is this a fair comparison of revenue growth? What would you
+              change?</strong
+            >
           </p>
           <button class="smallbtn" id="twistBtn">Expose the trick</button>
           <div class="answer" id="twistAnswer">
@@ -938,6 +988,58 @@
             bar/column charts should normally start at zero. A line chart can
             use a tighter scale if the axis is clearly labeled and the goal is
             to inspect small changes.
+            <figure class="twist-chart" id="twistCorrectChart">
+              <figcaption>
+                Corrected comparison: revenue from a zero baseline
+              </figcaption>
+              <svg
+                viewBox="0 0 600 320"
+                role="img"
+                aria-labelledby="twistCorrectTitle twistCorrectDesc"
+              >
+                <title id="twistCorrectTitle">
+                  Revenue compared on a zero-based axis
+                </title>
+                <desc id="twistCorrectDesc">
+                  The same January revenue of 98,000 pesos and February revenue
+                  of 100,000 pesos, on an axis from zero to 100,000 pesos. The
+                  bars are almost the same height, showing the 2.04 percent
+                  increase proportionately.
+                </desc>
+                <text x="90" y="25" class="twist-axis-label">Revenue (₱)</text>
+                <g class="twist-grid">
+                  <path d="M90 60H560 M90 105H560 M90 150H560 M90 195H560" />
+                </g>
+                <path class="twist-axis" d="M90 50V240H560" />
+                <g class="twist-ticks" text-anchor="end">
+                  <text x="78" y="65">100,000</text>
+                  <text x="78" y="110">75,000</text>
+                  <text x="78" y="155">50,000</text>
+                  <text x="78" y="200">25,000</text>
+                  <text x="78" y="245">0</text>
+                </g>
+                <g class="twist-bars twist-bars-correct">
+                  <rect x="170" y="63.6" width="100" height="176.4" rx="3" />
+                  <rect x="380" y="60" width="100" height="180" rx="3" />
+                </g>
+                <g class="twist-values" text-anchor="middle">
+                  <text x="220" y="51.6">₱98,000</text>
+                  <text x="430" y="48">₱100,000</text>
+                </g>
+                <g class="twist-ticks" text-anchor="middle">
+                  <text x="220" y="270">January</text>
+                  <text x="430" y="270">February</text>
+                </g>
+                <text
+                  x="325"
+                  y="305"
+                  text-anchor="middle"
+                  class="twist-axis-label"
+                >
+                  Month · Same synthetic data
+                </text>
+              </svg>
+            </figure>
           </div>
         </div>
       </section>

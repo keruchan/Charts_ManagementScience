@@ -897,6 +897,48 @@ code {
   margin-top: 20px;
   background: linear-gradient(120deg, #eef2ff, #f8fbff);
 }
+.twist-chart {
+  max-width: 660px;
+  margin: 18px 0;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--paper);
+  color: var(--ink);
+}
+.twist-chart figcaption {
+  margin-bottom: 8px;
+  font-weight: 750;
+}
+.twist-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.twist-grid {
+  fill: none;
+  stroke: var(--border);
+}
+.twist-axis {
+  fill: none;
+  stroke: var(--muted);
+}
+.twist-ticks,
+.twist-axis-label {
+  fill: var(--muted);
+  font-size: 14px;
+}
+.twist-bars {
+  fill: var(--brand);
+}
+.twist-bars-correct {
+  fill: var(--mint);
+}
+.twist-values {
+  fill: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+}
 
 /* Wide, manual discussion carousel. Offscreen slides are inert in JavaScript. */
 .concept-section {

@@ -92,9 +92,13 @@ $('#quizReset').addEventListener('click', () => {
   quizAnswers = {};
   renderQuiz();
 });
-$('#twistBtn').addEventListener('click', () =>
-  $('#twistAnswer').classList.toggle('show'),
-);
+$('#twistBtn').setAttribute('aria-controls', 'twistAnswer');
+$('#twistBtn').setAttribute('aria-expanded', 'false');
+$('#twistBtn').addEventListener('click', () => {
+  const open = $('#twistAnswer').classList.toggle('show');
+  $('#twistBtn').setAttribute('aria-expanded', String(open));
+  $('#twistBtn').textContent = open ? 'Hide answer' : 'Expose the trick';
+});
 renderQuiz();
 // Global reset restores the initial scenario, chart, filters, and quiz.
 $('#resetBtn').addEventListener('click', () => {
@@ -105,4 +109,6 @@ $('#resetBtn').addEventListener('click', () => {
   quizAnswers = {};
   renderQuiz();
   $('#twistAnswer').classList.remove('show');
+  $('#twistBtn').setAttribute('aria-expanded', 'false');
+  $('#twistBtn').textContent = 'Expose the trick';
 });
